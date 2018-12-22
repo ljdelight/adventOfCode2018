@@ -9,7 +9,7 @@ public class Main {
         UNKNOWN, ROCKY, WET, NARROW
     }
 
-    public static class Node implements Comparable {
+    public static class Node implements Comparable<Node> {
         public int x;
         public int y;
         public int t;
@@ -24,7 +24,7 @@ public class Main {
         }
 
         @Override
-        public int compareTo(Object o) {
+        public int compareTo(Node o) {
             if ((o != null) && (o instanceof Node)) {
                 return Integer.compare(this.d, ((Node) o).d);
             }
